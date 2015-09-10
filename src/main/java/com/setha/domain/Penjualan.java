@@ -4,31 +4,35 @@
  */
 package com.setha.domain;
 
-import java.util.Date;
+import java.sql.Date;
+
+
 
 /**
  *
  * @author aviani
  */
 public class Penjualan {
-    private String idBarang;
+    private int idBarang;
     private String nama;
-    private Integer jumlah;
+    private int jumlah;
     private Date tglTransaksi;
+    public static int jumlahUser=0;
 
-    public String getIdBarang() {
+    public int getIdBarang() {
         return idBarang;
     }
 
-    public void setIdBarang(String idBarang) {
-        this.idBarang = idBarang;
+    public void setIdBarang(int idBarang) {
+        this.jumlahUser++;
+        this.idBarang = this.jumlahUser;
     }
 
-    public Integer getJumlah() {
+    public int getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(Integer jumlah) {
+    public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
     }
 

@@ -9,16 +9,19 @@ package com.setha.domain;
  * @author aviani
  */
 public class User {
-    private String idUser;
+    private int idUser;
     private String nama;
     private String password;
+    private static int jumlahUser = 0;
 
-    public String getIdUser() {
+   
+    public int getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
+    public void setIdUser(int idUser) {
+        this.jumlahUser++;
+        this.idUser = this.jumlahUser;
     }
 
     public String getNama() {
@@ -35,28 +38,7 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final User other = (User) obj;
-        if ((this.nama == null) ? (other.nama != null) : !this.nama.equals(other.nama)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + (this.nama != null ? this.nama.hashCode() : 0);
-        return hash;
+    
     }
     
 }
